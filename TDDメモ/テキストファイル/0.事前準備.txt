@@ -1,0 +1,63 @@
+
+事前準備
+
+必要なツール一覧
+
+ツール		用途			確認コマンド
+MinGW（g++）	C++ コンパイラ		g++ --version
+CMake		ビルド管理ツール	cmake --version
+VS Code		エディタ		—
+
+ダウンロード先
+MinGW：https://github.com/niXman/mingw-builds-binaries/releases
+CMake：https://cmake.org/download/（インストール時に「Add CMake to the system PATH」にチェック）
+VS Code：https://code.visualstudio.com/
+
+
+VS Code 拡張機能
+拡張機能			用途
+C/C++（Microsoft）		C++ の補完・デバッグ
+CMake Tools（Microsoft）	CMake のビルド支援
+
+
+CMakeLists.txt の内容
+
+Google Testを自動ダウンロードして使用する設定
+CMakeLists.txtという名前のファイルを作成して以下のコードを記載
+
+---------------------------------------------------------------------------
+cmake_minimum_required(VERSION 3.14)
+project(TDD)
+
+set(CMAKE_CXX_STANDARD 17)
+
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
+  DOWNLOAD_EXTRACT_TIMESTAMP true
+)
+FetchContent_MakeAvailable(googletest)
+
+add_executable(tests test_money.cpp)
+target_link_libraries(tests gtest_main)
+
+enable_testing()
+add_test(NAME MoneyTest COMMAND tests)
+
+---------------------------------------------------------------------------
+
+
+ビルド・テスト実行コマンド
+
+初回のみ（ビルドディレクトリの生成）
+cmake -S . -B build -G "MinGW Makefiles"
+(初回は Google Test のダウンロードが走るため少し時間がかかります。)
+
+2回目以降（ビルド＆テスト実行）
+ビルド
+cmake --build build
+テスト実行
+.\build\tests.exe
+
+
