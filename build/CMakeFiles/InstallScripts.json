@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Totecadmin/Documents/TDD/build/cmake_install.cmake",
+		"C:/Users/Totecadmin/Documents/TDD/build/_deps/googletest-build/cmake_install.cmake",
+		"C:/Users/Totecadmin/Documents/TDD/build/_deps/googletest-build/googlemock/cmake_install.cmake",
+		"C:/Users/Totecadmin/Documents/TDD/build/_deps/googletest-build/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
