@@ -2,12 +2,10 @@
 
 class Dollar {
 public:
-    int amount;
-    
-    Dollar(int amount) : amount(amount) {}
-
-    void times(int multiplier) {
-        amount = 10;
+    int amount;                              // 型を用意（int）
+    Dollar(int amount) : amount(amount) {}   // コンストラクタ
+    Dollar times(int multiplier) {
+        return Dollar(amount * multiplier);
     }
 };
 

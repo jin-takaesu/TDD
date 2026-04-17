@@ -71,29 +71,29 @@ include CMakeFiles/tests.dir/flags.make
 CMakeFiles/tests.dir/codegen:
 .PHONY : CMakeFiles/tests.dir/codegen
 
-CMakeFiles/tests.dir/test_money.cpp.obj: CMakeFiles/tests.dir/flags.make
-CMakeFiles/tests.dir/test_money.cpp.obj: CMakeFiles/tests.dir/includes_CXX.rsp
-CMakeFiles/tests.dir/test_money.cpp.obj: C:/Users/Totecadmin/Documents/TDD/test_money.cpp
-CMakeFiles/tests.dir/test_money.cpp.obj: CMakeFiles/tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Totecadmin\Documents\TDD\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tests.dir/test_money.cpp.obj"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tests.dir/test_money.cpp.obj -MF CMakeFiles\tests.dir\test_money.cpp.obj.d -o CMakeFiles\tests.dir\test_money.cpp.obj -c C:\Users\Totecadmin\Documents\TDD\test_money.cpp
+CMakeFiles/tests.dir/test.cpp.obj: CMakeFiles/tests.dir/flags.make
+CMakeFiles/tests.dir/test.cpp.obj: CMakeFiles/tests.dir/includes_CXX.rsp
+CMakeFiles/tests.dir/test.cpp.obj: C:/Users/Totecadmin/Documents/TDD/test.cpp
+CMakeFiles/tests.dir/test.cpp.obj: CMakeFiles/tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Totecadmin\Documents\TDD\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tests.dir/test.cpp.obj"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tests.dir/test.cpp.obj -MF CMakeFiles\tests.dir\test.cpp.obj.d -o CMakeFiles\tests.dir\test.cpp.obj -c C:\Users\Totecadmin\Documents\TDD\test.cpp
 
-CMakeFiles/tests.dir/test_money.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tests.dir/test_money.cpp.i"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Totecadmin\Documents\TDD\test_money.cpp > CMakeFiles\tests.dir\test_money.cpp.i
+CMakeFiles/tests.dir/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tests.dir/test.cpp.i"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Totecadmin\Documents\TDD\test.cpp > CMakeFiles\tests.dir\test.cpp.i
 
-CMakeFiles/tests.dir/test_money.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tests.dir/test_money.cpp.s"
-	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Totecadmin\Documents\TDD\test_money.cpp -o CMakeFiles\tests.dir\test_money.cpp.s
+CMakeFiles/tests.dir/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tests.dir/test.cpp.s"
+	C:\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Totecadmin\Documents\TDD\test.cpp -o CMakeFiles\tests.dir\test.cpp.s
 
 # Object files for target tests
 tests_OBJECTS = \
-"CMakeFiles/tests.dir/test_money.cpp.obj"
+"CMakeFiles/tests.dir/test.cpp.obj"
 
 # External object files for target tests
 tests_EXTERNAL_OBJECTS =
 
-tests.exe: CMakeFiles/tests.dir/test_money.cpp.obj
+tests.exe: CMakeFiles/tests.dir/test.cpp.obj
 tests.exe: CMakeFiles/tests.dir/build.make
 tests.exe: lib/libgtest_main.a
 tests.exe: lib/libgtest.a

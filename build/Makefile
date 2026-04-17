@@ -235,29 +235,29 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\googletest-build\googletest\CMakeFiles\gtest_main.dir\build.make _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
-test_money.obj: test_money.cpp.obj
-.PHONY : test_money.obj
+test.obj: test.cpp.obj
+.PHONY : test.obj
 
 # target to build an object file
-test_money.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\tests.dir\build.make CMakeFiles/tests.dir/test_money.cpp.obj
-.PHONY : test_money.cpp.obj
+test.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tests.dir\build.make CMakeFiles/tests.dir/test.cpp.obj
+.PHONY : test.cpp.obj
 
-test_money.i: test_money.cpp.i
-.PHONY : test_money.i
+test.i: test.cpp.i
+.PHONY : test.i
 
 # target to preprocess a source file
-test_money.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\tests.dir\build.make CMakeFiles/tests.dir/test_money.cpp.i
-.PHONY : test_money.cpp.i
+test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tests.dir\build.make CMakeFiles/tests.dir/test.cpp.i
+.PHONY : test.cpp.i
 
-test_money.s: test_money.cpp.s
-.PHONY : test_money.s
+test.s: test.cpp.s
+.PHONY : test.s
 
 # target to generate assembly for a file
-test_money.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\tests.dir\build.make CMakeFiles/tests.dir/test_money.cpp.s
-.PHONY : test_money.cpp.s
+test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\tests.dir\build.make CMakeFiles/tests.dir/test.cpp.s
+.PHONY : test.cpp.s
 
 # Help Target
 help:
@@ -277,9 +277,9 @@ help:
 	@echo ... gtest
 	@echo ... gtest_main
 	@echo ... tests
-	@echo ... test_money.obj
-	@echo ... test_money.i
-	@echo ... test_money.s
+	@echo ... test.obj
+	@echo ... test.i
+	@echo ... test.s
 .PHONY : help
 
 

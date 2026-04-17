@@ -11,7 +11,7 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
-add_executable(tests test_money.cpp)
+add_executable(tests test.cpp)
 target_link_libraries(tests gtest_main)
 
 enable_testing()
