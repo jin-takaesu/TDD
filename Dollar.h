@@ -7,5 +7,8 @@ public:
     Dollar times(int multiplier) {
         return Dollar(amount * multiplier);
     }
+        bool operator==(const Dollar& other) const {
+        return amount == other.amount;
+    }
 };
 

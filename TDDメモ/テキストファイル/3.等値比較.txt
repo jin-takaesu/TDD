@@ -1,0 +1,81 @@
+
+等値比較
+
+前章副作用でreturnでDollarオブジェクトを返すようにしtimes()関数はDollarオブジェクトを受け取れるようになりました。
+しかし現在その返ってきた値が正しいか確かめる方法がありません。。
+「EXPECT_EQ(10, ten.amount);」変数 amount を直接参照しているので、将来amountを非公開（private）にしたくなったときにテストが壊れてしまいます。
+
+これを壊れないようにするにはそもそもオブジェクト同士で比較できれば内部構造知らなくても確かめられるよね！と言うことです
+
+自分でも言っている意味が分からなくなってきたので簡単に言うと
+「X=X」って正しいよねだって「X=X」なんだもん。的な感じです。
+Xの中身なんか知らなくてもこれを実装してテストすれば等値か等値じゃないかわかるってことです。
+
+
+現在のtest.cpp
+---------------------------------------------------------------
+TEST(DollarTest, Multiplication) {
+    Dollar five(5);
+    Dollar ten = five.times(2);
+
+    EXPECT_EQ(10, ten.amount);　←こいつ	
+
+    Dollar fifteen = five.times(3);
+    EXPECT_EQ(15, fifteen.amount);
+}
+---------------------------------------------------------------
+
+こいつを
+EXPECT_EQ(10, ten.amount); 
+
+こう！
+EXPECT_TRUE(ten == Dollar(10));  // オブジェクト同士で比較する
+
+もともとは「tenのamountは10ですか？」と聞いてるところを
+「tenはDollar(10)と同じですか？」と聞くことによって中身を知らなくても
+Dollarと同じかどうかはわかるといった感じです。
+
+ついでに「EXPECT_EQ(15, fifteen.amount);」も
+こう！
+EXPECT_TRUE(fifteen == Dollar(15));
+
+書き換えてコンパイルすると、
+
+error: no match for 'operator=='
+
+といったエラーが。。TDDなのでこれは正しい手順です。前進してます。RedをGreenにする。これがTDD。
+
+
+operator== が未定義とブチギレられているので定義してあげます。
+
+
+ファイル追記→Dollar.h
+---------------------------------------------------------------
+
+class Dollar {
+public:
+    int amount;
+    Dollar(int amount) : amount(amount) {}
+    Dollar times(int multiplier) {
+        return Dollar(amount * multiplier);
+    }
+    bool operator==(const Dollar& other) const {　←この辺
+        return amount == other.amount;
+    }
+
+};
+
+---------------------------------------------------------------
+
+これでoperator== を定義することでテストが通るようになります。
+bool真偽値の型で引数(const Dollar& other)は
+・const Dollar&　Dollar オブジェクトの参照
+・other	比較相手のオブジェクト（右辺）
+
+return amount == other.amount;で比較してamount同士が等しければtrueを返すよって内容です。
+
+
+この方法だとTDD特有の実装前のテストが書けるようになったということです。
+
+
+
